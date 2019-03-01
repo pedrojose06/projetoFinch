@@ -32,25 +32,20 @@ def busca(letra):
     r_sertanejo = csv.reader(sertanejo)
 
     # 'For' onde os 4 arquivos .csv rodam simultaneamente procurando a variável 'letra' dentro dos arquivos 
-    for row1, row2, row3, row4 in itertools.zip_longest(r_bn, r_funk,r_gospel,r_sertanejo):
-        for field1, field2, field3, field4 in itertools.zip_longest(row1, row2, row3,row4) :   
+    for linha1, linha2, linha3, linha4 in itertools.zip_longest(r_bn, r_funk,r_gospel,r_sertanejo):
+        for campo1, campo2, campo3, campo4 in itertools.zip_longest(linha1, linha2, linha3,linha4) :   
             
-            if letra in field1:
+            if letra in campo1:
                 resultado = 'Bossa nova'
                 
-                
-            elif letra in field2:
+            elif letra in campo2:
                 resultado = 'Funk'
-                print(field2)
                 
-            elif letra in field3:
+            elif letra in campo3:
                 resultado = 'Gospel'
-                print(resultado)
                 
-            elif letra in field4:
-                resultado = 'Sertanejo'
-                print(resultado)
-                
+            elif letra in campo4:
+                resultado = 'Sertanejo'                
 
     return resultado           
 #Palavras/Frases que o programa funciona :Eu sei que vou te amar - rabetão - quatro ou cinco - adorarei  
